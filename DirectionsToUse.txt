@@ -1,0 +1,65 @@
+My code which implements the ARC policy is Arc1.java & LRU policy is Lru1.java
+This document uses Arc1.java as example to show how to compile and run it
+
+For easier operation keep the trace files , java code files and script file in the same folder.
+
+STEPS TO COMPILE AND RUN THE PROGRAM:
+
+1) To set the environment:
+	instruction: #java
+	
+2) To Compile the java code:
+
+	Compile the java code by typing the javac command below:
+	
+	SYNTAX : javac programfilename.java
+
+	[username:~/filename/] javac Arc1.java 
+
+	Assuming the file Arc1.java is in the current working directory, you should see no error messages.
+	Now for each class defined in the code a ".class" file will be created in the current directory when code gets compiled correctly.
+	
+3) To run the java code:
+
+	You will use the "java" command to execute the program.
+	
+	Type the java command as shown below.
+
+	SYNTAX : [username:~/filename/] java -D cammandLine_argument1=Value1 -D cammandLine_argument2=Value2 class-name_which_has_main_function 
+	
+	# command Line argument1 : size-> cache size
+	# command Line argument2 : file-> path to trace file name
+	
+	for example(cache size=1024 & trace=P4.lis) : java -Dsize=1024 -Dfile="/path_of _file/P4.lis" Arc1
+
+	You should see the output of the program.
+	
+	
+******* script file is written to run both LRU and ARC code for all cache size given in paper for trace file P4.lis ********
+
+Steps to run script file ->
+
+you will need to add the path for P4.lis file in script file i.e. run.sh for command line argument "file".
+
+In submitted run.sh file I have written - java -Dsize=1024 -Dfile="P4.lis" Arc1
+If P4.lis file is in same directory as the code and script file then no need to mention path. Just write P4.lis
+for example:java -Dsize=1024 -Dfile="P4.lis" Arc1
+
+If P4.lis is in another folder then in the command write the actual path of P4.lis file.
+for example:java -Dsize=1024 -Dfile="/afs/asu.edu/users/o/s/a/osalvi/Desktop/P4.lis" Arc1
+
+
+1) To set the environment:
+	instruction :[username:~/filename/] #java
+
+2) Get the permission to run script file 
+
+Let the script file is run.sh and is in the current working directory.
+
+	instruction :[username:~/filename/] chmod +x run.sh
+	
+3) Now we can run the script file
+
+	instruction :[username:~/filename/] ./run.sh
+	
+Now the script file will run on the command Line and you can see the output of the program for different instances.
